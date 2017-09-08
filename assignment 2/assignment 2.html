@@ -1,0 +1,106 @@
+<!--
+    Author: Hessam Ganjian
+    Student ID: A00965207
+    Assignment 2
+-->
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        <!--
+        function myPage() {
+            firstTimer = null;
+            secondTimer = null;
+
+            divOne = document.createElement("div");
+
+            myButton = document.createElement("input");
+            myButton.type = "button";
+            myButton.value = "Change";
+
+            document.body.appendChild(divOne);
+
+            for (let i = 0; i < 5; i++) {
+                img = document.createElement("img");
+                img.src = i + ".jpg";
+                img.width = 120;
+                img.alt = "notClicked"
+                divOne.appendChild(img);
+                img.onclick = function () {
+                    if (this.alt == "notClicked") {
+                        this.parentNode.insertBefore(this, this.parentElement.firstChild);
+                        this.alt = "Clicked";
+                    }
+                }
+            }
+
+            document.body.appendChild(document.createElement("br"));
+
+            document.body.appendChild(myButton);
+            document.body.appendChild(document.createElement("br"));
+            document.body.appendChild(document.createElement("br"));
+
+            firstImg = document.createElement("img");
+            firstImg.src = "5.jpg";
+            firstImg.width = 100;
+            firstImg.style.position = "absolute";
+            firstImg.style.left = 10;
+            document.body.appendChild(firstImg);
+
+
+            secondImg = document.createElement("img");
+            secondImg.src = "6.jpg";
+            secondImg.width = 100;
+            secondImg.style.position = "absolute";
+            secondImg.style.marginTop = "100px";
+            secondImg.style.left = 10;
+            document.body.appendChild(secondImg);
+
+            firstImg.ondblclick = function () {
+
+                if (firstTimer == null) {
+                    firstTimer = setInterval(function () {
+                        document.getElementsByTagName("img")[5].style.left = parseInt(document.getElementsByTagName("img")[5].style.left) + 1 + "px";
+                    }, 100);
+                }
+                else {
+                    clearInterval(firstTimer);
+                    firstTimer = null;
+                }
+            }
+
+            secondImg.ondblclick = function () {
+
+                if (secondTimer == null) {
+                    secondTimer = setInterval(function () {
+                        document.getElementsByTagName("img")[6].style.left = parseInt(document.getElementsByTagName("img")[6].style.left) + 1 + "px";
+                    }, 50);
+                }
+
+                else {
+                    clearInterval(secondTimer);
+                    secondTimer = null;
+                }
+
+            }
+
+
+            $(myButton).click(function () {
+                $("img").css("border", "1px solid red");
+            });
+        }
+        onload = function () {
+            emptyPage = true;
+            document.body.ondblclick = function () {
+                if (emptyPage){
+                    myPage();
+                    emptyPage = false;
+                }
+            }
+        }
+        // -->
+    </script>
+</head>
+<body>
+</body>
+</html>

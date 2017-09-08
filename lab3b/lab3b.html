@@ -1,0 +1,45 @@
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        $(function () {
+            //part 1
+            $("img").click(function () {
+                $(this).css("border", "solid red");
+            });
+            //part 2
+            $("img","#div1").hover(function () {
+                $(this).css("width", "100px");
+            });
+            //part 3
+            $("p").dblclick(function () {
+                $(this).css("color", "blue");
+            });
+            //part 4
+            $("p", "#div3").hover(function () {
+                $(this).css("background-color", "yellow");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <img id="im1" src="cat.jpg" />
+        <img id="im2" src="dog.jpg" />
+        <img id="im3" src="fish.jpg" />
+    </div>
+
+    <div id="div2">
+        <p id="p1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempor consectetur dictum. Proin in velit ac neque mattis congue at a turpis. Nulla fringilla, lectus a gravida gravida, quam nulla fermentum ipsum, sit amet ultricies leo nisl at justo.</p>
+        <p id="p2">Quisque sit amet bibendum nisi. Vivamus blandit nec dui eu finibus. Donec rutrum, nunc sit amet sagittis facilisis, dolor nulla maximus nisi, id elementum nisi nulla in nisi. Sed vel ligula malesuada, consectetur ante ac, semper ante. Nam auctor quam vel tellus hendrerit viverra. Cras et tincidunt sapien. </p>
+        <p id="p3">Donec felis urna, interdum nec lacinia eu, pulvinar at sem. Suspendisse potenti. Mauris vitae eros suscipit, fringilla nisi vel, pharetra nisi. Praesent eget finibus dolor, vehicula consectetur nulla.</p>
+    </div>
+
+    <div id="div3">
+        <p id="p4">Ut purus risus, elementum ut leo sed, dictum congue sapien. Fusce interdum, dui eu lacinia mattis, diam eros congue ex, nec malesuada felis urna nec turpis</p>
+        <p id="p5">Aliquam fringilla, nisl quis placerat gravida, quam augue consequat felis, quis pharetra orci dolor a turpis. Sed laoreet interdum risus non luctus. Curabitur viverra vehicula sodales. </p>
+        <img id="im4" src="bird.jpg" />
+        <img id="im5" src="turtle.jpg" />
+    </div>
+</body>
+</html>

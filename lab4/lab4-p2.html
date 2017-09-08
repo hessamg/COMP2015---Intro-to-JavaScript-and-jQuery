@@ -1,0 +1,32 @@
+<!--
+    Author: Hessam Ganjian
+    Student ID: A00965207
+    Lab 4 - page 2
+-->
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Datepicker</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+  $( function() {
+      $("#datepicker").datepicker();
+      $.datepicker.formatDate("DD, MM d, yy", new Date(2007, 7 - 1, 14), {
+          dayNamesShort: $.datepicker.regional["fr"].dayNamesShort,
+          dayNames: $.datepicker.regional["fr"].dayNames,
+          monthNamesShort: $.datepicker.regional["fr"].monthNamesShort,
+          monthNames: $.datepicker.regional["fr"].monthNames
+      });
+  } );
+    </script>
+</head>
+<body>
+
+    <p>Date: <input type="text" id="datepicker"></p>
+
+
+</body>
+</html>

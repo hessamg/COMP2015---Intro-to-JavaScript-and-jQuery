@@ -1,0 +1,75 @@
+<!--
+    Author: Hessam Ganjian
+    Student ID: A00965207
+    Lab 4 - page 3
+-->
+<!doctype>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>styleswitcher/doctypetoggle</title>
+
+
+    <link rel="stylesheet" type="text/css" href="css/styles1.css" title="styles1" media="screen">
+    <link rel="alternate stylesheet" type="text/css" href="css/styles2.css" title="styles2" media="screen" disabled="">
+    <link rel="alternate stylesheet" type="text/css" href="css/styles3.css" title="styles3" media="screen" disabled="">
+
+    <!-- script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script -->
+    <script type="text/javascript" src="js/jquery.min.js.download"></script>
+    <script type="text/javascript" src="js/stylesheetToggle.js.download"></script>
+    <script type="text/javascript">
+        $(function () {
+            // Call stylesheet init so that all stylesheet changing functions
+            // will work.
+            $.stylesheetInit();
+            //$('body').css('background-color', 'pink');
+            // This code loops through the stylesheets when you click the link with
+            // an ID of "toggler" below.
+            $('#toggler').bind(
+				'click',
+				function (e) {
+				    $('body').css('background-color', 'pink');
+
+				    $.stylesheetToggle();
+				    return false;
+				}
+			);
+
+            // When one of the styleswitch links is clicked then switch the stylesheet to
+            // the one matching the value of that links rel attribute.
+            $('.styleswitch').bind(
+				'click',
+				function (e) {
+				    $.stylesheetSwitch(this.getAttribute('rel'));
+				    return false;
+				}
+			);
+        }
+        );
+    </script>
+</head>
+<body>
+    <h1>Stylesheet switcher using jQuery - toggle example</h1>
+    <p>
+        This is an extended version of my original <a href="http://2008.kelvinluck.com/assets/jquery/styleswitch/index.html">stylesheet switcher</a>
+        for jQuery. It is slightly more fully featured than the original version (which was written
+        back in 2006!) as it includes the option to toggle stylesheets (which will loop between the
+        available stylesheets one after the other). It is also more reusable as you can now trigger
+        the stylesheet switching from your own code.
+    </p>
+    <p>
+        Currently active stylesheet:
+        <span id="st1">styles1</span>
+        <span id="st2">styles2</span>
+        <span id="st3">styles3</span>
+    </p>
+    <p><a href="http://2008.kelvinluck.com/assets/jquery/styleswitch/serversideSwitch.html" id="toggler">Toggle</a> between stylesheets.</p>
+    <p>Choose a specific different stylesheet:</p>
+    <ul>
+        <li><a href="http://2008.kelvinluck.com/assets/jquery/styleswitch/serversideSwitch.html%3Fstyle=style1.html" rel="styles1" class="styleswitch">styles1</a></li>
+        <li><a href="http://2008.kelvinluck.com/assets/jquery/styleswitch/serversideSwitch.html%3Fstyle=style2.html" rel="styles2" class="styleswitch">styles2</a></li>
+        <li><a href="http://2008.kelvinluck.com/assets/jquery/styleswitch/serversideSwitch.html%3Fstyle=style3.html" rel="styles3" class="styleswitch">styles3</a></li>
+    </ul>
+
+</body>
+</html>

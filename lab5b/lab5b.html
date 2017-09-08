@@ -1,0 +1,161 @@
+<!--
+    Author: Hessam Ganjian
+    Student ID: A00965207
+    Lab5b
+-->
+<html>
+<head>
+    <script>
+        <!--
+       
+        function myPage() {
+            timerClick = null;
+            timerOver = null;
+
+            divOne = document.createElement("div");
+            divOne.style.backgroundColor = "pink";
+
+            divTwo = document.createElement("div");
+            divTwo.style.backgroundColor = "cyan";
+            divTwo.id = "0";
+
+            divThree = document.createElement("div");
+            divThree.style.backgroundColor = "red";
+            divThree.id = "1";
+
+            divFour = document.createElement("div");
+            divFour.style.backgroundColor = "green";
+            divFour.id = "2";
+
+            divFive = document.createElement("div");
+            divFive.style.backgroundColor = "CornflowerBlue  ";
+            divFive.id = "3";
+
+            divSix = document.createElement("div");
+            divSix.style.backgroundColor = "yelllow";
+
+            myH1 = document.createElement("h1");
+            myH1.appendChild(document.createTextNode("Image Liker by <Hessam Ganjian>"));
+
+            mydiv2H2 = document.createElement("h2");
+            mydiv2H2.class = "instruction";
+            mydiv2H2.appendChild(document.createTextNode("All Images"));
+
+            mydiv3H2 = document.createElement("h2");
+            mydiv3H2.class = "instruction";
+            mydiv3H2.appendChild(document.createTextNode("Images I Like"));
+
+            mydiv4H2 = document.createElement("h2");
+            mydiv4H2.class = "instruction";
+            mydiv4H2.appendChild(document.createTextNode("Images I Hate"));
+
+            mydiv5H2 = document.createElement("h2");
+            mydiv5H2.class = "instruction";
+            mydiv5H2.appendChild(document.createTextNode("Favorites of all time"));
+
+            myButton = document.createElement("input");
+            myButton.type = "button";
+            myButton.value = "Reset";
+
+
+
+            document.body.appendChild(divOne);
+            divOne.appendChild(myH1);
+
+            document.body.appendChild(divTwo);
+            divTwo.appendChild(mydiv2H2);
+
+            for (let i = 0; i < 15; i++) {
+                img = document.createElement("img");
+                img.src = i + ".jpg";
+                img.width = 120;
+                img.style.margin = "4px";
+                img.style.border = "red solid 1px";
+
+                divTwo.appendChild(img);
+
+                img.onclick = function () {
+
+                    if (this.nextSibling == null) { // last in the div; move divs
+
+                        if (this.parentNode.nextSibling.id == 1 || this.parentNode.nextSibling.id == 2 || this.parentNode.nextSibling.id == 3) {
+                            this.parentNode.nextSibling.appendChild(this);
+                        } else {
+                            divTwo.appendChild(this);
+                        }
+
+                    } else {
+                        this.parentNode.insertBefore(this, this.nextSibling.nextSibling);
+                    }
+                }
+            }
+
+
+            document.body.appendChild(divThree);
+            divThree.appendChild(mydiv3H2);
+
+            document.body.appendChild(divFour);
+            divFour.appendChild(mydiv4H2);
+
+            document.body.appendChild(divFive);
+            divFive.appendChild(mydiv5H2);
+
+            document.body.appendChild(divSix);
+            divSix.appendChild(myButton);
+
+            document.body.appendChild(document.createElement("br"));
+
+            myImg = document.createElement("img");
+            myImg.src = "15.jpg";
+            myImg.width = 100;
+            document.body.appendChild(myImg);
+
+            myButton.onclick = function () {
+
+                for (let i = document.body.childElementCount; i > 0; i--) {
+                    document.body.removeChild(document.body.childNodes[i]);
+                }
+               
+                myPage();
+               
+            }
+
+            myImg.onmouseover = function () {
+                if (timerClick == null) {
+                    if (timerOver == null) {
+                        timerOver = setInterval(function () {
+                            myImg.width += 1;
+                        }, 100);
+                    }
+                    else {
+                        clearInterval(timerOver);
+                        timerOver = null;
+                    }
+                }
+            }
+
+            myImg.onclick = function () {
+
+                if (timerOver == null) {
+                    if (timerClick == null) {
+                        timerClick = setInterval(function () {
+                            myImg.vspace += 1;
+                        }, 100);
+                    }
+                    else {
+                        clearInterval(timerClick);
+                        timerClick = null;
+                    }
+                }
+            }
+
+        }
+        onload = function () {
+            myPage();
+        }
+        // -->
+    </script>
+</head>
+<body>
+</body>
+</html>

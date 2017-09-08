@@ -1,0 +1,239 @@
+<!--
+    Author: Hessam Ganjian
+    Student ID: A00965207
+    Lab 4 - page 5
+-->
+<!doctype html>
+<html>
+<head>
+    <title>JQuery Corner Demo</title>
+    <style>
+        body, div, h1, .desc {
+            font-family: 'trebuchet ms', verdana, arial;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-size: small;
+        }
+
+        h1 {
+            padding: 10px;
+            margin: 0;
+            font-size: large;
+        }
+
+        h2 {
+            padding: 10px;
+            background-color: #ddd;
+            color: black;
+            margin: 0;
+            font-size: small;
+            font-weight: normal;
+        }
+
+        #main {
+            background: #fff;
+            padding: 10px;
+        }
+
+        div.section {
+            clear: left;
+        }
+
+            div.section h1 {
+                padding: 20px 20px 0 20px;
+            }
+
+            div.section h2 {
+                background: #fff;
+                padding: 1px 20px;
+            }
+
+        div.demo, div.inner {
+            color: #000;
+            text-align: center;
+            font-family: verdana, arial, sans-serif;
+        }
+
+        div.demo {
+            float: left;
+            width: 18em;
+            padding: 20px;
+            margin: 1em;
+            background: #6af;
+        }
+
+        div.inner {
+            margin: 0;
+            background: #ffc;
+            padding: 10px;
+            border: 0;
+            zoom: 1;
+        }
+
+        div.outer {
+            float: left;
+            margin: 15px;
+            background: #c82;
+            padding: 8px;
+            width: 22em;
+        }
+
+        div.fun {
+            margin: 2px;
+        }
+
+        div#readyTest {
+            background-color: #6af;
+            float: right;
+            padding: 10px;
+            height: 20px;
+        }
+
+        #abs {
+            position: absolute;
+            width: 200px;
+            background: #ffa;
+            padding: 5px;
+            margin: 8px;
+            top: 0;
+            right: 0;
+            text-align: center;
+        }
+
+        /* fixed height/width testing */
+        .box {
+            background-color: #6af;
+            padding: 15px;
+            text-align: center;
+            margin: 25px;
+        }
+
+        #box1 {
+            zoom: 1;
+        }
+        /* fluid (zoom for layout) */
+        #box2 {
+            height: 150px;
+        }
+        /* fixed height */
+        #box3 {
+            width: 300px;
+            margin: auto;
+        }
+        /* fixed width */
+        #box4 {
+            height: 150px;
+            width: 300px;
+            margin: auto;
+        }
+        /* fixed height and width */
+
+        div.plain {
+            background-color: #6af;
+            text-align: center;
+        }
+
+        b {
+            color: #f44;
+        }
+
+        #twitter {
+            float: right;
+            right: 20px;
+        }
+
+            #twitter a {
+                text-decoration: none;
+                font-family: arial;
+                vertical-align: top;
+            }
+
+            #twitter img {
+                border: none;
+                float: left;
+            }
+
+        div.desc {
+            margin: 10px;
+        }
+    </style>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.0.0.js"></script>
+    <script type="text/javascript" src="http://malsup.github.com/jquery.corner.js"></script>
+    <script type="text/javascript">
+        // test auto-ready logic - call corner before DOM is ready
+        $('#readyTest').corner();
+
+        $(function () {
+            $('#dynCorner').click(function () {
+                $('#dynamic').uncorner();
+                $('#dynamic').corner();
+            });
+            $('#dynBite').click(function () {
+                $('#dynamic').uncorner();
+                $('#dynamic').corner("bite");
+            });
+            $('#dynTear').click(function () {
+                $('#dynamic').uncorner();
+                $('#dynamic').corner("tear");
+            });
+            $('#dynSharp').click(function () {
+                $('#dynamic').uncorner();
+                $('#dynamic').corner("sharp");
+            });
+            $('#dynCool').click(function () {
+                $('#dynamic').uncorner();
+                $('#dynamic').corner("cool");
+            });
+            $('#dynUncorner').click(function () {
+                $('#dynamic').uncorner();
+            });
+
+            $('div.inner').wrap('<div class="outer"></div>');
+            $('p').wrap("<code></code>");
+
+            $('div.demo, div.inner').each(function () {
+                var t = $('p', this).text();
+                eval(t);
+            });
+
+            // fixed/fluid tests
+            $("div.box, div.plain").corner();
+            $("#abs").corner("cc:#08e");
+
+            $('.myCorner').corner();
+        });
+    </script>
+</head>
+<body>
+
+    <p>
+        <button id="dynCorner">Corner</button>
+        <button id="dynUncorner">Uncorner</button>
+        <button id="dynSharp">Sharp</button>  
+        <button id="dynCool">Cool</button>
+        <button id="dynTear">Tear</button>
+        <button id="dynBite">bite</button>
+
+
+    <div id="dynamic" style="width: 200px; padding: 30px; background-color: #6af">
+    <strong>Demo<br /></strong>
+    This div has an id of #dynamic
+    </div>
+    <p />
+
+
+
+    <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        _uacct = "UA-850242-2";
+        urchinTracker();
+    </script>
+</body>
+</html>

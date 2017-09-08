@@ -1,0 +1,46 @@
+<!--
+    Author: Hessam Ganjian
+    Student ID: A00965207
+    Lab2
+-->
+<html>
+<head>
+    <script>
+        <!--
+        window.onload = function () {
+            var today = new Date();     //current date
+            var xmas = new Date(2016, 11, 25, 5, 00, 00);   //xmas date
+            var days = (xmas - today) / (1000 * 60 * 60 * 24);  //converting msecs to days
+            alert(Math.round(days));    // round the days and alert it
+
+            var teams = ["Boston Bruins", "Buffalo Sabres", "Detroit Red Wings", "Florida Panthers", "Montreal Canadiens"
+                        , "Ottawa Senators", "Tampa Bay Lightning", "Toronto Maple Leafs", "Carolina Hurricanes"
+                        , "Columbus Blue Jackets", "New Jersey Devils", "New York Islanders", "New York Rangers"
+                        , "Philadelphia Flyers", "Pittsburgh Penguins", "Washington Capitals", "Anaheim Ducks"
+                        , "Arizona Coyotes", "Calgary Flames", "Edmonton Oilers", "Los Angeles Kings", "San Jose Sharks"
+                        , "Vancouver Canucks", "Chicago Blackhawks", "Colorado Avalanche", "Dallas Stars"
+                        , "Minnesota Wild", "Nashville Predators", "St. Louis Blues", "Winnipeg Jets"];     //NHL teams
+            for (var i = 0; i < teams.length;i++){      
+                if(teams[i].indexOf("an") != -1){   // looks for "an" in all teams and if found alerts it
+                    alert(teams[i]);    
+                }
+            }
+
+            for (var i = 0; i < document.images.length; i++) {	// DOM 0
+                document.images[i].style.border = "red solid";  //changing all images border' style
+            }
+
+            for (var i = 0; i < document.getElementsByTagName("img").length; i++) { //DOM 1
+                document.getElementsByTagName("img")[i].width = 100;    //changing all images' width
+             }
+        }
+        // -->
+    </script>
+</head>
+<body>
+    <noscript><p>Please enable javascript</p></noscript>
+    <img src="bird.jpg" alt="photo of a bird." />
+    <img src="cat.jpg" alt="photo of a cat." />
+    <img src="dog.jpg" alt="photo of a dog." />
+</body>
+</html>
